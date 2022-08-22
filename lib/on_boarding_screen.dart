@@ -46,7 +46,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   onTap: () {
                     _controller.jumpToPage(2);
                   },
-                  child: Text('skip'),
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
                 ),
 
                 // dot indicators
@@ -54,7 +60,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   controller: _controller,
                   count: 3,
                   effect: JumpingDotEffect(
-                    activeDotColor: Colors.blue,
+                    activeDotColor: Colors.deepPurple,
+                    //dotColor: Colors.blueGrey,
                   ),
                 ),
 
@@ -69,7 +76,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             ),
                           );
                         },
-                        child: Text('Done'),
+                        child: Text(
+                          'Done',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                        ),
                       )
                     : GestureDetector(
                         onTap: () {
@@ -78,7 +91,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             curve: Curves.easeIn,
                           );
                         },
-                        child: Text('Next'),
+                        child: const Text(
+                          'Next',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                        ),
                       ),
               ],
             ),
