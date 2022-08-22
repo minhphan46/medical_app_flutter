@@ -50,7 +50,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
 
                 // dot indicators
-                SmoothPageIndicator(controller: _controller, count: 3),
+                SmoothPageIndicator(
+                  controller: _controller,
+                  count: 3,
+                  effect: JumpingDotEffect(
+                    activeDotColor: Colors.blue,
+                  ),
+                ),
 
                 // next or done
                 _onLastPage
