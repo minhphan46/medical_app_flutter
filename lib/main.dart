@@ -13,7 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
         primaryColor: Color(0xffb388eb),
+        accentColor: Colors.purple.shade50,
       ),
       home: OnBoardingScreen(),
     );
