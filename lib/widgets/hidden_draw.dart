@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:on_boarding/pages/home_page.dart';
 import 'package:on_boarding/pages/profile_page.dart';
@@ -36,7 +37,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     _pages = [
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Homepage',
+          name: 'HomePage',
           baseStyle: myTextStyle,
           selectedStyle: myTextStyle,
           colorLineSelected: Colors.deepPurple,
@@ -58,7 +59,8 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
   @override
   Widget build(BuildContext context) {
     return HiddenDrawerMenu(
-      backgroundColorAppBar: Colors.deepPurple[50],
+      typeOpen: TypeOpen.FROM_RIGHT,
+      backgroundColorAppBar: Colors.white,
       elevationAppBar: 0,
       backgroundColorMenu: Colors.deepPurple.shade200,
       screens: _pages,
@@ -66,7 +68,21 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
       slidePercent: 60, // chieu rong cua drawer
       contentCornerRadius: 20, // bo goc page
       //disableAppBarDefault: true,
-      typeOpen: TypeOpen.FROM_RIGHT,
+      withAutoTittleName: true,
+      tittleAppBar: Center(
+        child: Text(
+          "Medical App",
+          style: GoogleFonts.dancingScript(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 23,
+          ),
+        ),
+      ),
+      leadingAppBar: Icon(
+        Icons.menu_outlined,
+        color: Colors.deepPurple[100],
+      ),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import '../widgets/home_page_widgets/profile_drawer.dart';
 import '../widgets/home_page_widgets/list_category_widget.dart';
 import '../widgets/home_page_widgets/search_bar.dart';

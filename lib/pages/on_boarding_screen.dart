@@ -77,10 +77,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(
+                              builder: (context) => HiddenDrawer()
+                              /* HomePage(
                                 backToPageOneOfOnBoarding:
                                     backToPageOneOfOnBoarding,
-                              ),
+                              ) */
+                              ,
                             ),
                           );
                         },
