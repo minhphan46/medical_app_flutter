@@ -4,11 +4,6 @@ import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:on_boarding/pages/home_page.dart';
 import 'package:on_boarding/pages/profile_page.dart';
 
-//===========================================================
-// file nay hien dang loi                                   =
-// chua biet cach sua                                       =
-//===========================================================
-
 class HiddenDrawer extends StatefulWidget {
   const HiddenDrawer({Key? key}) : super(key: key);
 

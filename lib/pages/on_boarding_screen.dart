@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:on_boarding/widgets/hidden_draw.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../intro_screen/intro_page_1.dart';
-import '../intro_screen/intro_page_2.dart';
-import '../intro_screen/intro_page_3.dart';
+import './intro_screen/intro_page_1.dart';
+import './intro_screen/intro_page_2.dart';
+import './intro_screen/intro_page_3.dart';
 import 'home_page.dart';
 
 class OnBoardingScreen extends StatefulWidget {
