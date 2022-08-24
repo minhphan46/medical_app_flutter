@@ -11,6 +11,10 @@ class _SearchBarState extends State<SearchBar> {
   final findController = TextEditingController();
   String problem = "";
 
+  String get getProblem {
+    return problem;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,8 +28,15 @@ class _SearchBarState extends State<SearchBar> {
         child: TextField(
           controller: findController,
           //onSubmitted: (_) {},
-          decoration: const InputDecoration(
-            prefixIcon: Icon(Icons.search),
+          decoration: InputDecoration(
+            prefixIcon: IconButton(
+              onPressed: () {
+                problem = findController.text;
+                findController.text = "";
+                print(problem);
+              },
+              icon: Icon(Icons.search),
+            ),
             border: InputBorder.none,
             hintText: 'How can we help you?',
           ),
