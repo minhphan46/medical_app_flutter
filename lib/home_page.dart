@@ -8,8 +8,12 @@ import 'widgets/home_page_widgets/doctor_list_widget.dart';
 import 'widgets/bottom_bar.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  final Function? backToPageOneOfOnBoarding;
+  HomePage(this.backToPageOneOfOnBoarding, {Key? key}) : super(key: key);
+
   String name = 'Minh Phan';
+  String avatarImagePath = 'assets/images/gai_xinh.jpg';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +23,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               // appBar
-              MyAppBar(name: name),
+              MyAppBar(name: name, avatarImagePath: avatarImagePath),
               const SizedBox(height: 25),
               // card -> How do you feel?
               const CardStarted(),
@@ -64,7 +68,11 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      endDrawer: ProfileDrawer(name: name),
+      endDrawer: ProfileDrawer(
+        name: name,
+        avatarImagePath: avatarImagePath,
+        backToPageOneOfOnBoarding: backToPageOneOfOnBoarding,
+      ),
       bottomNavigationBar: const BottomBar(),
     );
   }

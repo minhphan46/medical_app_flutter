@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:on_boarding/on_boarding_screen.dart';
 
 // ignore: must_be_immutable
 class ProfileDrawer extends StatelessWidget {
+  final Function? backToPageOneOfOnBoarding;
   String name = "";
-  ProfileDrawer({Key? key, required this.name}) : super(key: key);
+  final String avatarImagePath;
+  ProfileDrawer({
+    Key? key,
+    required this.name,
+    this.avatarImagePath = "assets/images/default_avatar.jpg",
+    this.backToPageOneOfOnBoarding,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -21,12 +29,12 @@ class ProfileDrawer extends StatelessWidget {
                     CircleAvatar(
                       radius: 50,
                       backgroundColor: Colors.deepPurple[100],
-                      backgroundImage: AssetImage('assets/images/gai_xinh.jpg'),
+                      backgroundImage: AssetImage(avatarImagePath),
                     ),
                     const SizedBox(height: 5),
                     Text(
                       name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 22,
                       ),
                     ),
@@ -81,7 +89,11 @@ class ProfileDrawer extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                  backToPageOneOfOnBoarding!();
+                },
               ),
             ),
           ],

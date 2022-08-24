@@ -18,6 +18,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 // keep track of if we are on the last page or not
   bool _onLastPage = false;
 
+  void backToPageOneOfOnBoarding() {
+    _controller.jumpToPage(0);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +41,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ],
           ),
           Container(
-            alignment: Alignment(0, 0.75),
+            alignment: const Alignment(0, 0.75),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -59,7 +63,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 SmoothPageIndicator(
                   controller: _controller,
                   count: 3,
-                  effect: JumpingDotEffect(
+                  effect: const JumpingDotEffect(
                     activeDotColor: Colors.deepPurple,
                     //dotColor: Colors.blueGrey,
                   ),
@@ -72,11 +76,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(),
+                              builder: (context) =>
+                                  HomePage(backToPageOneOfOnBoarding),
                             ),
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           'Done',
                           style: TextStyle(
                             color: Colors.white,
@@ -87,7 +92,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     : GestureDetector(
                         onTap: () {
                           _controller.nextPage(
-                            duration: Duration(milliseconds: 500),
+                            duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn,
                           );
                         },

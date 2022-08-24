@@ -3,8 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyAppBar extends StatelessWidget {
   String? name = '';
-
-  MyAppBar({Key? key, this.name}) : super(key: key);
+  final String avatarImagePath;
+  MyAppBar({
+    Key? key,
+    this.name,
+    this.avatarImagePath = "assets/images/default_avatar.jpg",
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +47,7 @@ class MyAppBar extends StatelessWidget {
             child: CircleAvatar(
               radius: 27,
               backgroundColor: Colors.deepPurple[100],
-              backgroundImage: AssetImage('assets/images/gai_xinh.jpg'),
+              backgroundImage: AssetImage(avatarImagePath),
             ),
           ),
         ],
