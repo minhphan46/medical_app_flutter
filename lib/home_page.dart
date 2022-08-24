@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/home_page_widgets/profile_drawer.dart';
 import 'widgets/home_page_widgets/list_category_widget.dart';
 import 'widgets/home_page_widgets/search_bar.dart';
 import 'widgets/home_page_widgets/card_get_starts_widget.dart';
@@ -7,8 +8,8 @@ import 'widgets/home_page_widgets/doctor_list_widget.dart';
 import 'widgets/bottom_bar.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+  HomePage({Key? key}) : super(key: key);
+  String name = 'Minh Phan';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               // appBar
-              MyAppBar(name: 'Minh Phan'),
+              MyAppBar(name: name),
               const SizedBox(height: 25),
               // card -> How do you feel?
               const CardStarted(),
@@ -63,6 +64,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      endDrawer: ProfileDrawer(name: name),
       bottomNavigationBar: const BottomBar(),
     );
   }

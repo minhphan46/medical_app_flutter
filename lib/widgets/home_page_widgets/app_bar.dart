@@ -35,10 +35,16 @@ class MyAppBar extends StatelessWidget {
             ],
           ),
           // profile picter
-          CircleAvatar(
-            radius: 27,
-            backgroundColor: Colors.deepPurple[100],
-            backgroundImage: AssetImage('assets/images/gai_xinh.jpg'),
+          GestureDetector(
+            onTap: (() {
+              //print("show profile");
+              Scaffold.of(context).openEndDrawer();
+            }),
+            child: CircleAvatar(
+              radius: 27,
+              backgroundColor: Colors.deepPurple[100],
+              backgroundImage: AssetImage('assets/images/gai_xinh.jpg'),
+            ),
           ),
         ],
       ),
