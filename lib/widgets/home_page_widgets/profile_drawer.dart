@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:on_boarding/on_boarding_screen.dart';
+import 'package:on_boarding/pages/profile_page.dart';
 
 // ignore: must_be_immutable
 class ProfileDrawer extends StatelessWidget {
@@ -75,7 +75,11 @@ class ProfileDrawer extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                  );
+                },
               ),
             ),
             Padding(
@@ -90,8 +94,7 @@ class ProfileDrawer extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.pop(context);
+                  Navigator.of(context).popUntil((route) => route.isFirst);
                   backToPageOneOfOnBoarding!();
                 },
               ),

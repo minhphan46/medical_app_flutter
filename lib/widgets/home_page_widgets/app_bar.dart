@@ -4,10 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 class MyAppBar extends StatelessWidget {
   String? name = '';
   final String avatarImagePath;
+  final Function? openHiddenDrawerController;
   MyAppBar({
     Key? key,
     this.name,
     this.avatarImagePath = "assets/images/default_avatar.jpg",
+    this.openHiddenDrawerController,
   }) : super(key: key);
 
   @override
