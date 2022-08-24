@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:on_boarding/widgets/home_page_widgets/doctor_card_widget.dart';
 import 'widgets/home_page_widgets/list_category_widget.dart';
 import 'widgets/home_page_widgets/search_bar.dart';
 import 'widgets/home_page_widgets/card_get_starts_widget.dart';
 import 'widgets/home_page_widgets/app_bar.dart';
 import 'widgets/home_page_widgets/doctor_list_widget.dart';
+import 'widgets/bottom_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -58,12 +58,12 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               // doctor List
-              DoctorList(),
-              // bottom bar
+              const DoctorList(),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }

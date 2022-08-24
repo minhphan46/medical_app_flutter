@@ -43,12 +43,13 @@ class DoctorCard extends StatelessWidget {
                 bottom: 0,
                 left: 22,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CircleAvatar(
                         backgroundColor: Colors.yellow[100],
@@ -59,6 +60,7 @@ class DoctorCard extends StatelessWidget {
                           size: 17,
                         ),
                       ),
+                      SizedBox(width: 5),
                       Text('${rating}'),
                     ],
                   ),

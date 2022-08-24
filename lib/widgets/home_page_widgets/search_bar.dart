@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
-class SearchBar extends StatelessWidget {
+class SearchBar extends StatefulWidget {
   SearchBar({Key? key}) : super(key: key);
+
+  @override
+  State<SearchBar> createState() => _SearchBarState();
+}
+
+class _SearchBarState extends State<SearchBar> {
   final findController = TextEditingController();
+  String problem = "";
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,6 +23,7 @@ class SearchBar extends StatelessWidget {
         ),
         child: TextField(
           controller: findController,
+          //onSubmitted: (_) {},
           decoration: const InputDecoration(
             prefixIcon: Icon(Icons.search),
             border: InputBorder.none,
